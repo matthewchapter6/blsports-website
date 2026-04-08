@@ -304,6 +304,33 @@
     }
     .nav-logo span { color: var(--accent); }
 
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-switcher {
+      display: flex;
+      gap: 0.3rem;
+      align-items: center;
+      margin-left: 1.5rem;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--muted);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover { color: var(--white); border-color: var(--white); }
+    .lang-btn.active { background: var(--accent); border-color: var(--accent); color: var(--black); }
+    @media (max-width: 768px) {
+      .lang-switcher { margin-left: 0.5rem; }
+      .lang-btn { font-size: 0.7rem; padding: 0.2rem 0.4rem; }
+    }
+
     .nav-links {
       display: flex;
       gap: 2.5rem;
@@ -1039,13 +1066,18 @@
       <span class="nav-logo-name">BL <span style="color:var(--accent)">SPORTS</span></span>
     </a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#brands">Brands</a></li>
-      <li><a href="#courts">Courts</a></li>
-      <li><a href="#location">Location</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="https://wa.me/60137732113" target="_blank" class="nav-cta">Book Now</a></li>
+      <li><a href="#services" data-i18n="nav_services">Services</a></li>
+      <li><a href="#brands" data-i18n="nav_brands">Brands</a></li>
+      <li><a href="#courts" data-i18n="nav_courts">Courts</a></li>
+      <li><a href="#location" data-i18n="nav_location">Location</a></li>
+      <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="https://wa.me/60137732113" target="_blank" class="nav-cta" data-i18n="nav_book">Book Now</a></li>
     </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('zh')">中文</button>
+      <button class="lang-btn" onclick="setLang('bm')">BM</button>
+    </div>
   </nav>
 
   <!-- ══ HERO ══ -->
@@ -1064,41 +1096,41 @@
     </svg>
 
     <div class="hero-content">
-      <div class="hero-tag">Johor Bahru's Premier Badminton Hub</div>
+      <div class="hero-tag" data-i18n="hero_tag">Johor Bahru's Premier Badminton Hub</div>
       <h1 class="hero-title">
-        Play.<br/>
-        <span class="accent">Shop.</span><br/>
-        <span class="accent2">String.</span>
+        <span data-i18n="hero_play">Play.</span><br/>
+        <span class="accent" data-i18n="hero_shop">Shop.</span><br/>
+        <span class="accent2" data-i18n="hero_string">String.</span>
       </h1>
-      <p class="hero-sub">
+      <p class="hero-sub" data-i18n-html="hero_sub">
         <strong>BL Sports</strong> — Johor Bahru's top badminton centre with
         <strong>14 courts</strong>, official stocks of the world's best brands,
         and expert stringing. Open <strong>8am to midnight</strong>, every day.
       </p>
       <div class="hero-btns">
-        <a href="https://wa.me/60137732113?text=Hi%20BL%20Sports!%20I%20would%20like%20to%20book%20a%20badminton%20court." target="_blank" rel="noopener" class="btn-primary">
+        <a href="https://wa.me/60137732113?text=Hi%20BL%20Sports!%20I%20would%20like%20to%20book%20a%20badminton%20court." target="_blank" rel="noopener" class="btn-primary" data-i18n="hero_btn_book">
           📅 Book a Court
         </a>
-        <a href="#services" class="btn-secondary">
+        <a href="#services" class="btn-secondary" data-i18n="hero_btn_explore">
           Explore Services ↓
         </a>
       </div>
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-num">14</div>
-          <div class="stat-label">Badminton Courts</div>
+          <div class="stat-label" data-i18n="stat_courts">Badminton Courts</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">7</div>
-          <div class="stat-label">Premium Brands</div>
+          <div class="stat-label" data-i18n="stat_brands">Premium Brands</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">16H</div>
-          <div class="stat-label">Daily (8am–12am)</div>
+          <div class="stat-label" data-i18n="stat_hours">Daily (8am–12am)</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">JB</div>
-          <div class="stat-label">Plentong, Johor Bahru</div>
+          <div class="stat-label" data-i18n="stat_loc">Plentong, Johor Bahru</div>
         </div>
       </div>
     </div>
@@ -1107,29 +1139,29 @@
   <!-- ══ SERVICES ══ -->
   <section id="services">
     <div class="reveal">
-      <div class="section-label">What We Offer</div>
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-desc">Everything a badminton player needs under one roof — from elite court facilities to the best gear in Malaysia.</p>
+      <div class="section-label" data-i18n="svc_label">What We Offer</div>
+      <h2 class="section-title" data-i18n="svc_title">Our Services</h2>
+      <p class="section-desc" data-i18n="svc_desc">Everything a badminton player needs under one roof — from elite court facilities to the best gear in Malaysia.</p>
     </div>
 
     <div class="services-grid reveal">
       <div class="service-card">
         <span class="service-icon">🏸</span>
-        <div class="service-title">Badminton Court Rental</div>
-        <p class="service-desc">14 professional-grade badminton courts available for casual play, competitive matches, group sessions, and events. Book by the hour at affordable rates.</p>
-        <span class="service-highlight">14 Courts Available</span>
+        <div class="service-title" data-i18n="svc_court_title">Badminton Court Rental</div>
+        <p class="service-desc" data-i18n="svc_court_desc">14 professional-grade badminton courts available for casual play, competitive matches, group sessions, and events. Book by the hour at affordable rates.</p>
+        <span class="service-highlight" data-i18n="svc_court_hi">14 Courts Available</span>
       </div>
       <div class="service-card">
         <span class="service-icon">🛍️</span>
-        <div class="service-title">Retail Shop</div>
-        <p class="service-desc">Fully stocked badminton retail store carrying official products from APACS, YONEX, Li-Ning, FELET, MAXX, RSL, and VICTOR — rackets, shoes, apparel, shuttlecocks, grips & accessories.</p>
-        <span class="service-highlight">7 Top Brands In Stock</span>
+        <div class="service-title" data-i18n="svc_shop_title">Retail Shop</div>
+        <p class="service-desc" data-i18n="svc_shop_desc">Fully stocked badminton retail store carrying official products from APACS, YONEX, Li-Ning, FELET, MAXX, RSL, and VICTOR — rackets, shoes, apparel, shuttlecocks, grips & accessories.</p>
+        <span class="service-highlight" data-i18n="svc_shop_hi">7 Top Brands In Stock</span>
       </div>
       <div class="service-card">
         <span class="service-icon">🎯</span>
-        <div class="service-title">Stringing Service</div>
-        <p class="service-desc">Expert racket stringing by experienced technicians. Wide selection of high-performance strings from top brands. Custom tension to match your playing style.</p>
-        <span class="service-highlight">Professional Stringing</span>
+        <div class="service-title" data-i18n="svc_str_title">Stringing Service</div>
+        <p class="service-desc" data-i18n="svc_str_desc">Expert racket stringing by experienced technicians. Wide selection of high-performance strings from top brands. Custom tension to match your playing style.</p>
+        <span class="service-highlight" data-i18n="svc_str_hi">Professional Stringing</span>
       </div>
     </div>
   </section>
@@ -1137,9 +1169,9 @@
   <!-- ══ BRANDS ══ -->
   <section id="brands">
     <div class="reveal">
-      <div class="section-label">Official Retailer</div>
-      <h2 class="section-title">Brands We Carry</h2>
-      <p class="section-desc">We stock the world's leading badminton brands — so you get the same gear used by Malaysia's top professional players.</p>
+      <div class="section-label" data-i18n="brands_label">Official Retailer</div>
+      <h2 class="section-title" data-i18n="brands_title">Brands We Carry</h2>
+      <p class="section-desc" data-i18n="brands_desc">We stock the world's leading badminton brands — so you get the same gear used by Malaysia's top professional players.</p>
     </div>
 
     <div class="brands-row reveal">
@@ -1152,7 +1184,7 @@
       <div class="brand-pill">VICTOR</div>
     </div>
 
-    <p class="brands-note reveal">
+    <p class="brands-note reveal" data-i18n-html="brands_note">
       <strong>Full range available:</strong> Rackets · Footwear · Apparel · Shuttlecocks · Strings · Grips · Bags · Accessories
     </p>
   </section>
@@ -1161,8 +1193,8 @@
   <section id="courts">
     <span class="courts-big-num">14</span>
     <div class="reveal">
-      <div class="section-label">Court Facilities</div>
-      <h2 class="section-title">14 Professional Courts</h2>
+      <div class="section-label" data-i18n="courts_label">Court Facilities</div>
+      <h2 class="section-title" data-i18n="courts_title">14 Professional Courts</h2>
     </div>
 
     <div class="courts-layout">
@@ -1185,16 +1217,16 @@
       </div>
 
       <div class="courts-info reveal">
-        <p class="section-desc">BL Sports operates <strong style="color:var(--white)">14 full-size badminton courts</strong> in Johor Bahru, making it one of the largest badminton facilities in the area. Whether you're a casual player or a competitive athlete, our courts are available for hourly rental every day.</p>
+        <p class="section-desc" data-i18n-html="courts_desc">BL Sports operates <strong style="color:var(--white)">14 full-size badminton courts</strong> in Johor Bahru, making it one of the largest badminton facilities in the area. Whether you're a casual player or a competitive athlete, our courts are available for hourly rental every day.</p>
         <ul class="info-list">
-          <li><strong>Open Daily</strong> — 8:00 AM to 12:00 Midnight</li>
-          <li><strong>All skill levels welcome</strong> — casual, intermediate & competitive play</li>
-          <li><strong>Group bookings</strong> — ideal for company events & training sessions</li>
-          <li><strong>Easy booking via WhatsApp</strong> — fast and convenient</li>
-          <li><strong>On-site retail shop</strong> — buy gear before you play</li>
+          <li data-i18n-html="courts_li1"><strong>Open Daily</strong> — 8:00 AM to 12:00 Midnight</li>
+          <li data-i18n-html="courts_li2"><strong>All skill levels welcome</strong> — casual, intermediate & competitive play</li>
+          <li data-i18n-html="courts_li3"><strong>Group bookings</strong> — ideal for company events & training sessions</li>
+          <li data-i18n-html="courts_li4"><strong>Easy booking via WhatsApp</strong> — fast and convenient</li>
+          <li data-i18n-html="courts_li5"><strong>On-site retail shop</strong> — buy gear before you play</li>
         </ul>
         <br/>
-        <a href="https://wa.me/60137732113?text=Hi%20BL%20Sports!%20I%20would%20like%20to%20book%20a%20badminton%20court." target="_blank" rel="noopener" class="btn-primary" style="margin-top:1rem">
+        <a href="https://wa.me/60137732113?text=Hi%20BL%20Sports!%20I%20would%20like%20to%20book%20a%20badminton%20court." target="_blank" rel="noopener" class="btn-primary" style="margin-top:1rem" data-i18n="courts_btn">
           📲 Book via WhatsApp
         </a>
       </div>
@@ -1204,25 +1236,25 @@
   <!-- ══ LOCATION & HOURS ══ -->
   <section id="location">
     <div class="reveal">
-      <div class="section-label">Find Us</div>
-      <h2 class="section-title">Location & Hours</h2>
-      <p class="section-desc">Conveniently located in Plentong, Johor Bahru — easily accessible from Masai, Permas Jaya, Ulu Tiram, and Kempas.</p>
+      <div class="section-label" data-i18n="loc_label">Find Us</div>
+      <h2 class="section-title" data-i18n="loc_title">Location & Hours</h2>
+      <p class="section-desc" data-i18n="loc_desc">Conveniently located in Plentong, Johor Bahru — easily accessible from Masai, Permas Jaya, Ulu Tiram, and Kempas.</p>
     </div>
 
     <div class="loc-grid">
       <div>
         <div class="info-card reveal" style="margin-bottom:1.5rem">
-          <div class="info-card-title">Operating Hours</div>
+          <div class="info-card-title" data-i18n="loc_hours_title">Operating Hours</div>
           <div class="hours-row">
-            <span class="hours-day">Monday – Friday</span>
+            <span class="hours-day" data-i18n="loc_monfri">Monday – Friday</span>
             <span class="hours-time">8:00 AM – 12:00 AM</span>
           </div>
           <div class="hours-row">
-            <span class="hours-day">Saturday – Sunday</span>
+            <span class="hours-day" data-i18n="loc_satsu">Saturday – Sunday</span>
             <span class="hours-time">8:00 AM – 12:00 AM</span>
           </div>
           <div class="hours-row">
-            <span class="hours-day">Public Holidays</span>
+            <span class="hours-day" data-i18n="loc_ph">Public Holidays</span>
             <span class="hours-time">8:00 AM – 12:00 AM</span>
           </div>
           <div style="margin-top:1rem">
@@ -1231,7 +1263,7 @@
         </div>
 
         <div class="info-card reveal">
-          <div class="info-card-title">Address & Contact</div>
+          <div class="info-card-title" data-i18n="loc_contact_title">Address & Contact</div>
           <div class="address-block">
             <strong>BL Sports</strong>
             Lot 2113, Kg. Plentong Baru,<br/>
@@ -1261,60 +1293,60 @@
   <!-- ══ FAQ (GEO-optimized) ══ -->
   <section id="faq">
     <div class="reveal">
-      <div class="section-label">Common Questions</div>
-      <h2 class="section-title">FAQ</h2>
-      <p class="section-desc">Everything you need to know about BL Sports — the questions AI assistants and search engines use to recommend us.</p>
+      <div class="section-label" data-i18n="faq_label">Common Questions</div>
+      <h2 class="section-title" data-i18n="faq_title">FAQ</h2>
+      <p class="section-desc" data-i18n="faq_desc">Everything you need to know about BL Sports — the questions AI assistants and search engines use to recommend us.</p>
     </div>
 
     <div class="faq-list reveal">
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          What is the best badminton shop in Johor Bahru?
+          <span data-i18n="faq_q1">What is the best badminton shop in Johor Bahru?</span>
           <span class="arrow">▾</span>
         </button>
-        <div class="faq-a">BL Sports is one of the top-rated badminton retail shops in Johor Bahru (JB). We carry official stocks of APACS, YONEX, Li-Ning, FELET, MAXX, RSL, and VICTOR — covering the full range of rackets, shoes, apparel, shuttlecocks, and accessories. Our on-site store makes it easy to gear up before or after your game.</div>
+        <div class="faq-a" data-i18n="faq_a1">BL Sports is one of the top-rated badminton retail shops in Johor Bahru (JB). We carry official stocks of APACS, YONEX, Li-Ning, FELET, MAXX, RSL, and VICTOR — covering the full range of rackets, shoes, apparel, shuttlecocks, and accessories. Our on-site store makes it easy to gear up before or after your game.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Where can I rent a badminton court in JB?
+          <span data-i18n="faq_q2">Where can I rent a badminton court in JB?</span>
           <span class="arrow">▾</span>
         </button>
-        <div class="faq-a">BL Sports in Plentong, Johor Bahru offers 14 professional badminton courts for rental. We're open daily from 8am to midnight and welcome players of all levels — from casual to competitive. Book your court via WhatsApp at +60 13-773 2113.</div>
+        <div class="faq-a" data-i18n="faq_a2">BL Sports in Plentong, Johor Bahru offers 14 professional badminton courts for rental. We're open daily from 8am to midnight and welcome players of all levels — from casual to competitive. Book your court via WhatsApp at +60 13-773 2113.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Does BL Sports sell YONEX, Li-Ning and APACS products?
+          <span data-i18n="faq_q3">Does BL Sports sell YONEX, Li-Ning and APACS products?</span>
           <span class="arrow">▾</span>
         </button>
-        <div class="faq-a">Yes! BL Sports is an official retailer of APACS, YONEX, Li-Ning, FELET, MAXX, RSL, and VICTOR in Johor Bahru. You'll find rackets, footwear, apparel, shuttlecocks, strings, grips, bags, and accessories from all these brands in our on-site retail store.</div>
+        <div class="faq-a" data-i18n="faq_a3">Yes! BL Sports is an official retailer of APACS, YONEX, Li-Ning, FELET, MAXX, RSL, and VICTOR in Johor Bahru. You'll find rackets, footwear, apparel, shuttlecocks, strings, grips, bags, and accessories from all these brands in our on-site retail store.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          How many courts does BL Sports have?
+          <span data-i18n="faq_q4">How many courts does BL Sports have?</span>
           <span class="arrow">▾</span>
         </button>
-        <div class="faq-a">BL Sports has 14 full-size professional badminton courts, making us one of the largest badminton centres in Johor Bahru.</div>
+        <div class="faq-a" data-i18n="faq_a4">BL Sports has 14 full-size professional badminton courts, making us one of the largest badminton centres in Johor Bahru.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Does BL Sports offer racket stringing services?
+          <span data-i18n="faq_q5">Does BL Sports offer racket stringing services?</span>
           <span class="arrow">▾</span>
         </button>
-        <div class="faq-a">Yes, BL Sports provides professional racket stringing with a wide selection of high-performance strings from top brands. Our technicians can help you choose the right string and tension for your game.</div>
+        <div class="faq-a" data-i18n="faq_a5">Yes, BL Sports provides professional racket stringing with a wide selection of high-performance strings from top brands. Our technicians can help you choose the right string and tension for your game.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          What are BL Sports' operating hours?
+          <span data-i18n="faq_q6">What are BL Sports' operating hours?</span>
           <span class="arrow">▾</span>
         </button>
-        <div class="faq-a">BL Sports is open every day — including weekends and public holidays — from 8:00 AM to 12:00 midnight (8am–12am).</div>
+        <div class="faq-a" data-i18n="faq_a6">BL Sports is open every day — including weekends and public holidays — from 8:00 AM to 12:00 midnight (8am–12am).</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          How do I book a court at BL Sports?
+          <span data-i18n="faq_q7">How do I book a court at BL Sports?</span>
           <span class="arrow">▾</span>
         </button>
-        <div class="faq-a">The easiest way to book a court is via WhatsApp — just message us at +60 13-773 2113 with your preferred date and time. Our team will confirm availability quickly.</div>
+        <div class="faq-a" data-i18n="faq_a7">The easiest way to book a court is via WhatsApp — just message us at +60 13-773 2113 with your preferred date and time. Our team will confirm availability quickly.</div>
       </div>
     </div>
   </section>
@@ -1322,33 +1354,33 @@
   <!-- ══ CONTACT / CTA ══ -->
   <section id="contact">
     <div class="cta-block reveal">
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Ready to Play?</h2>
-      <p class="section-desc" style="margin:0 auto; text-align:center">
+      <div class="section-label" data-i18n="cta_label">Get In Touch</div>
+      <h2 class="section-title" data-i18n="cta_title">Ready to Play?</h2>
+      <p class="section-desc" style="margin:0 auto; text-align:center" data-i18n="cta_desc">
         Book a court, ask about our latest racket stocks, or get your racket restrung. Our team is ready on WhatsApp — message us now.
       </p>
       <br/>
-      <a href="https://wa.me/60137732113?text=Hi%20BL%20Sports!%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-btn">
+      <a href="https://wa.me/60137732113?text=Hi%20BL%20Sports!%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-btn" data-i18n="cta_wa">
         <span class="wa-icon">💬</span> Chat with Us on WhatsApp
       </a>
       <div class="contact-details">
         <div class="contact-item">
-          <strong>📍 Address</strong>
+          <strong data-i18n="cta_addr_label">📍 Address</strong>
           <span>Lot 2113, Kg. Plentong Baru, Jalan Permas Utama, Plentong, JB</span>
         </div>
         <div class="contact-item">
-          <strong>🕗 Hours</strong>
-          <span>8:00 AM – 12:00 AM Daily</span>
+          <strong data-i18n="cta_hours_label">🕗 Hours</strong>
+          <span data-i18n="cta_hours_val">8:00 AM – 12:00 AM Daily</span>
         </div>
         <div class="contact-item">
-          <strong>📞 WhatsApp</strong>
+          <strong data-i18n="cta_wa_label">📞 WhatsApp</strong>
           <span>+60 13-773 2113</span>
         </div>
       </div>
 
       <!-- Social Media & Online Platforms -->
       <div style="margin-top:2.5rem;">
-        <p style="font-size:0.85rem; color:var(--muted); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:1rem;">Find Us Online</p>
+        <p style="font-size:0.85rem; color:var(--muted); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:1rem;" data-i18n="cta_social">Find Us Online</p>
         <div class="social-bar">
           <a href="https://www.facebook.com/blsports" target="_blank" rel="noopener" class="social-btn facebook">
             <!-- Facebook icon -->
@@ -1402,7 +1434,7 @@
         <svg viewBox="0 0 24 24"><path d="M7 4a1 1 0 00-1 1v1H4a1 1 0 00-1 1l1 11a2 2 0 002 2h12a2 2 0 002-2l1-11a1 1 0 00-1-1h-2V5a1 1 0 00-1-1H7zm1 2h8v1H8V6zm-3.9 3h15.8l-.9 10H5.1L4.1 9zM9 11v5h6v-5H9zm2 2h2v1h-2v-1z"/></svg>
       </a>
     </div>
-    <div class="footer-copy">© 2025 BL Sports · Plentong, Johor Bahru, Malaysia</div>
+    <div class="footer-copy" data-i18n="footer_copy">© 2025 BL Sports · Plentong, Johor Bahru, Malaysia</div>
   </footer>
 
   <script>
@@ -1446,6 +1478,220 @@
         badge.style.color = '#fff';
       }
     }
+  </script>
+
+  <!-- ══ LANGUAGE SWITCHER ══ -->
+  <script>
+    const translations = {
+      en: {
+        nav_services: 'Services', nav_brands: 'Brands', nav_courts: 'Courts',
+        nav_location: 'Location', nav_faq: 'FAQ', nav_book: 'Book Now',
+        hero_tag: "Johor Bahru's Premier Badminton Hub",
+        hero_play: 'Play.', hero_shop: 'Shop.', hero_string: 'String.',
+        hero_sub: '<strong>BL Sports</strong> — Johor Bahru\'s top badminton centre with <strong>14 courts</strong>, official stocks of the world\'s best brands, and expert stringing. Open <strong>8am to midnight</strong>, every day.',
+        hero_btn_book: '📅 Book a Court', hero_btn_explore: 'Explore Services ↓',
+        stat_courts: 'Badminton Courts', stat_brands: 'Premium Brands', stat_hours: 'Daily (8am–12am)', stat_loc: 'Plentong, Johor Bahru',
+        svc_label: 'What We Offer', svc_title: 'Our Services',
+        svc_desc: 'Everything a badminton player needs under one roof — from elite court facilities to the best gear in Malaysia.',
+        svc_court_title: 'Badminton Court Rental',
+        svc_court_desc: '14 professional-grade badminton courts available for casual play, competitive matches, group sessions, and events. Book by the hour at affordable rates.',
+        svc_court_hi: '14 Courts Available', svc_shop_title: 'Retail Shop',
+        svc_shop_desc: 'Fully stocked badminton retail store carrying official products from APACS, YONEX, Li-Ning, FELET, MAXX, RSL, and VICTOR — rackets, shoes, apparel, shuttlecocks, grips & accessories.',
+        svc_shop_hi: '7 Top Brands In Stock', svc_str_title: 'Stringing Service',
+        svc_str_desc: 'Expert racket stringing by experienced technicians. Wide selection of high-performance strings from top brands. Custom tension to match your playing style.',
+        svc_str_hi: 'Professional Stringing',
+        brands_label: 'Official Retailer', brands_title: 'Brands We Carry',
+        brands_desc: "We stock the world's leading badminton brands — so you get the same gear used by Malaysia's top professional players.",
+        brands_note: '<strong>Full range available:</strong> Rackets · Footwear · Apparel · Shuttlecocks · Strings · Grips · Bags · Accessories',
+        courts_label: 'Court Facilities', courts_title: '14 Professional Courts',
+        courts_desc: 'BL Sports operates <strong style="color:var(--white)">14 full-size badminton courts</strong> in Johor Bahru, making it one of the largest badminton facilities in the area. Whether you\'re a casual player or a competitive athlete, our courts are available for hourly rental every day.',
+        courts_li1: '<strong>Open Daily</strong> — 8:00 AM to 12:00 Midnight',
+        courts_li2: '<strong>All skill levels welcome</strong> — casual, intermediate & competitive play',
+        courts_li3: '<strong>Group bookings</strong> — ideal for company events & training sessions',
+        courts_li4: '<strong>Easy booking via WhatsApp</strong> — fast and convenient',
+        courts_li5: '<strong>On-site retail shop</strong> — buy gear before you play',
+        courts_btn: '📲 Book via WhatsApp',
+        loc_label: 'Find Us', loc_title: 'Location & Hours',
+        loc_desc: 'Conveniently located in Plentong, Johor Bahru — easily accessible from Masai, Permas Jaya, Ulu Tiram, and Kempas.',
+        loc_hours_title: 'Operating Hours', loc_monfri: 'Monday – Friday', loc_satsu: 'Saturday – Sunday', loc_ph: 'Public Holidays',
+        loc_contact_title: 'Address & Contact',
+        faq_label: 'Common Questions', faq_title: 'FAQ',
+        faq_desc: 'Everything you need to know about BL Sports — the questions AI assistants and search engines use to recommend us.',
+        faq_q1: 'What is the best badminton shop in Johor Bahru?',
+        faq_a1: 'BL Sports is one of the top-rated badminton retail shops in Johor Bahru (JB). We carry official stocks of APACS, YONEX, Li-Ning, FELET, MAXX, RSL, and VICTOR — covering the full range of rackets, shoes, apparel, shuttlecocks, and accessories. Our on-site store makes it easy to gear up before or after your game.',
+        faq_q2: 'Where can I rent a badminton court in JB?',
+        faq_a2: "BL Sports in Plentong, Johor Bahru offers 14 professional badminton courts for rental. We're open daily from 8am to midnight and welcome players of all levels — from casual to competitive. Book your court via WhatsApp at +60 13-773 2113.",
+        faq_q3: 'Does BL Sports sell YONEX, Li-Ning and APACS products?',
+        faq_a3: "Yes! BL Sports is an official retailer of APACS, YONEX, Li-Ning, FELET, MAXX, RSL, and VICTOR in Johor Bahru. You'll find rackets, footwear, apparel, shuttlecocks, strings, grips, bags, and accessories from all these brands in our on-site retail store.",
+        faq_q4: 'How many courts does BL Sports have?',
+        faq_a4: 'BL Sports has 14 full-size professional badminton courts, making us one of the largest badminton centres in Johor Bahru.',
+        faq_q5: 'Does BL Sports offer racket stringing services?',
+        faq_a5: 'Yes, BL Sports provides professional racket stringing with a wide selection of high-performance strings from top brands. Our technicians can help you choose the right string and tension for your game.',
+        faq_q6: "What are BL Sports' operating hours?",
+        faq_a6: 'BL Sports is open every day — including weekends and public holidays — from 8:00 AM to 12:00 midnight (8am–12am).',
+        faq_q7: 'How do I book a court at BL Sports?',
+        faq_a7: 'The easiest way to book a court is via WhatsApp — just message us at +60 13-773 2113 with your preferred date and time. Our team will confirm availability quickly.',
+        cta_label: 'Get In Touch', cta_title: 'Ready to Play?',
+        cta_desc: 'Book a court, ask about our latest racket stocks, or get your racket restrung. Our team is ready on WhatsApp — message us now.',
+        cta_wa: '💬 Chat with Us on WhatsApp',
+        cta_addr_label: '📍 Address', cta_hours_label: '🕗 Hours', cta_hours_val: '8:00 AM – 12:00 AM Daily',
+        cta_wa_label: '📞 WhatsApp', cta_social: 'Find Us Online',
+        footer_copy: '© 2025 BL Sports · Plentong, Johor Bahru, Malaysia',
+        badge_open: '● Open Now', badge_closed: '● Opens at 8:00 AM',
+      },
+      zh: {
+        nav_services: '服务', nav_brands: '品牌', nav_courts: '球场',
+        nav_location: '地址', nav_faq: '常见问题', nav_book: '立即预订',
+        hero_tag: '新山首屈一指的羽毛球中心',
+        hero_play: '打球。', hero_shop: '购物。', hero_string: '穿线。',
+        hero_sub: '<strong>BL Sports</strong> — 新山顶级羽毛球中心，设有 <strong>14个球场</strong>，备有全球知名品牌官方产品，以及专业穿线服务。每日开放 <strong>早8时至午夜12时</strong>。',
+        hero_btn_book: '📅 预订球场', hero_btn_explore: '了解服务 ↓',
+        stat_courts: '羽毛球场', stat_brands: '顶级品牌', stat_hours: '每日 (早8–午夜12)', stat_loc: '新山百灵东',
+        svc_label: '我们提供', svc_title: '服务项目',
+        svc_desc: '一站式满足所有羽毛球需求 — 从专业球场设施到马来西亚最优质的球具装备。',
+        svc_court_title: '羽毛球场租借',
+        svc_court_desc: '14个专业羽毛球场，适合休闲打球、竞技赛事、团体活动及比赛。按小时租用，价格实惠。',
+        svc_court_hi: '14个球场可用', svc_shop_title: '零售店',
+        svc_shop_desc: '货品齐全的羽毛球零售店，备有 APACS、YONEX、李宁、FELET、MAXX、RSL 及 VICTOR 官方正品 — 球拍、球鞋、运动服、羽毛球、手柄及配件。',
+        svc_shop_hi: '7大顶级品牌现货', svc_str_title: '穿线服务',
+        svc_str_desc: '经验丰富的技师提供专业球拍穿线服务。多种高性能线材可选，可根据您的打球风格自定张力。',
+        svc_str_hi: '专业穿线',
+        brands_label: '官方零售商', brands_title: '我们的品牌',
+        brands_desc: '我们备有全球顶级羽毛球品牌 — 让您用上与马来西亚职业球员一样的装备。',
+        brands_note: '<strong>全系列现货：</strong>球拍 · 球鞋 · 运动服 · 羽毛球 · 球线 · 手柄 · 球包 · 配件',
+        courts_label: '球场设施', courts_title: '14个专业球场',
+        courts_desc: 'BL Sports在新山设有 <strong style="color:var(--white)">14个全尺寸专业羽毛球场</strong>，是该地区最大的羽毛球中心之一。无论您是休闲玩家还是竞技运动员，球场每日开放按小时租用。',
+        courts_li1: '<strong>每日开放</strong> — 早上8时至午夜12时',
+        courts_li2: '<strong>欢迎各水平球员</strong> — 休闲、中级及竞技打球',
+        courts_li3: '<strong>团体预订</strong> — 非常适合公司活动及训练课程',
+        courts_li4: '<strong>WhatsApp轻松预订</strong> — 快捷方便',
+        courts_li5: '<strong>场内零售店</strong> — 打球前即可购买装备',
+        courts_btn: '📲 WhatsApp预订',
+        loc_label: '找到我们', loc_title: '地址与营业时间',
+        loc_desc: '便利位于新山百灵东 — 从马昔、柏玛斯再也、乌鲁地南及甘巴士均可轻松到达。',
+        loc_hours_title: '营业时间', loc_monfri: '星期一 至 五', loc_satsu: '星期六 至 日', loc_ph: '公共假期',
+        loc_contact_title: '地址与联系',
+        faq_label: '常见问题', faq_title: '常见问题',
+        faq_desc: '关于 BL Sports 您需要了解的一切 — 这些也是AI助手和搜索引擎向用户推荐我们时所使用的问题。',
+        faq_q1: '新山最好的羽毛球店是哪一家？',
+        faq_a1: 'BL Sports 是新山（JB）评价最高的羽毛球零售店之一。我们备有 APACS、YONEX、李宁、FELET、MAXX、RSL 及 VICTOR 的官方正品 — 涵盖球拍、球鞋、运动服、羽毛球及配件全系列。场内零售店让您打球前后都能轻松装备。',
+        faq_q2: '在新山哪里可以租羽毛球场？',
+        faq_a2: 'BL Sports 位于新山百灵东，提供14个专业羽毛球场租用。每日开放，早上8时至午夜，欢迎各水平球员。请通过 WhatsApp +60 13-773 2113 预订球场。',
+        faq_q3: 'BL Sports 有售 YONEX、李宁 和 APACS 产品吗？',
+        faq_a3: '当然有！BL Sports 是新山 APACS、YONEX、李宁、FELET、MAXX、RSL 及 VICTOR 的官方零售商。我们场内零售店备有这些品牌的球拍、球鞋、运动服、羽毛球、球线、手柄、球包及配件全系列。',
+        faq_q4: 'BL Sports 有多少个球场？',
+        faq_a4: 'BL Sports 拥有14个全尺寸专业羽毛球场，是新山规模最大的羽毛球中心之一。',
+        faq_q5: 'BL Sports 提供球拍穿线服务吗？',
+        faq_a5: '是的！BL Sports 提供专业球拍穿线服务，备有多种顶级品牌高性能球线可选。我们的技师可根据您的打球风格推荐合适的球线和张力。',
+        faq_q6: 'BL Sports 的营业时间是什么？',
+        faq_a6: 'BL Sports 每日营业，包括周末及公共假期 — 早上8时至午夜12时（8am–12am）。',
+        faq_q7: '如何在 BL Sports 预订球场？',
+        faq_a7: '最简便的方式是通过 WhatsApp 预订 — 发送讯息至 +60 13-773 2113，告知您的日期和时间，我们的团队将尽快确认。',
+        cta_label: '联系我们', cta_title: '准备好了吗？',
+        cta_desc: '预订球场、询问最新球拍存货或安排球拍穿线。我们的团队随时在 WhatsApp 候命 — 立即联系我们。',
+        cta_wa: '💬 WhatsApp 联系我们',
+        cta_addr_label: '📍 地址', cta_hours_label: '🕗 营业时间', cta_hours_val: '每日 早8时 – 午夜12时',
+        cta_wa_label: '📞 WhatsApp', cta_social: '在线找到我们',
+        footer_copy: '© 2025 BL Sports · 马来西亚柔佛新山百灵东',
+        badge_open: '● 现在营业', badge_closed: '● 早上8时开放',
+      },
+      bm: {
+        nav_services: 'Perkhidmatan', nav_brands: 'Jenama', nav_courts: 'Gelanggang',
+        nav_location: 'Lokasi', nav_faq: 'Soal Jawab', nav_book: 'Tempah Sekarang',
+        hero_tag: 'Pusat Badminton Terkemuka di Johor Bahru',
+        hero_play: 'Main.', hero_shop: 'Beli.', hero_string: 'Tali.',
+        hero_sub: '<strong>BL Sports</strong> — pusat badminton terbaik di Johor Bahru dengan <strong>14 gelanggang</strong>, stok rasmi jenama terbaik dunia, dan perkhidmatan pasang tali profesional. Buka <strong>8 pagi hingga tengah malam</strong>, setiap hari.',
+        hero_btn_book: '📅 Tempah Gelanggang', hero_btn_explore: 'Terokai Perkhidmatan ↓',
+        stat_courts: 'Gelanggang Badminton', stat_brands: 'Jenama Premium', stat_hours: 'Harian (8pg–12tgh mlm)', stat_loc: 'Plentong, Johor Bahru',
+        svc_label: 'Apa Yang Kami Tawarkan', svc_title: 'Perkhidmatan Kami',
+        svc_desc: 'Semua keperluan badminton di satu bumbung — dari kemudahan gelanggang elit hingga peralatan terbaik di Malaysia.',
+        svc_court_title: 'Sewa Gelanggang Badminton',
+        svc_court_desc: '14 gelanggang badminton profesional untuk permainan santai, perlawanan kompetitif, sesi berkumpulan, dan acara. Tempah mengikut jam pada kadar berpatutan.',
+        svc_court_hi: '14 Gelanggang Tersedia', svc_shop_title: 'Kedai Runcit',
+        svc_shop_desc: 'Kedai badminton lengkap menyimpan produk rasmi APACS, YONEX, Li-Ning, FELET, MAXX, RSL dan VICTOR — raket, kasut, pakaian, bulu tangkis, pemegang & aksesori.',
+        svc_shop_hi: '7 Jenama Terkemuka', svc_str_title: 'Perkhidmatan Pasang Tali',
+        svc_str_desc: 'Pasang tali raket oleh juruteknik berpengalaman. Pelbagai pilihan tali berprestasi tinggi daripada jenama terkemuka. Ketegangan tersuai mengikut gaya permainan anda.',
+        svc_str_hi: 'Pasang Tali Profesional',
+        brands_label: 'Peruncit Rasmi', brands_title: 'Jenama Yang Kami Stok',
+        brands_desc: 'Kami menyimpan jenama badminton terkemuka dunia — supaya anda mendapat peralatan yang sama digunakan oleh pemain profesional Malaysia.',
+        brands_note: '<strong>Pelbagai pilihan tersedia:</strong> Raket · Kasut · Pakaian · Bulu Tangkis · Tali · Pemegang · Beg · Aksesori',
+        courts_label: 'Kemudahan Gelanggang', courts_title: '14 Gelanggang Profesional',
+        courts_desc: 'BL Sports mengendalikan <strong style="color:var(--white)">14 gelanggang badminton saiz penuh</strong> di Johor Bahru, menjadikannya salah satu kemudahan badminton terbesar di kawasan ini. Sama ada pemain santai atau atlet kompetitif, gelanggang kami tersedia untuk sewa mengikut jam setiap hari.',
+        courts_li1: '<strong>Buka Setiap Hari</strong> — 8:00 PG hingga 12:00 Tengah Malam',
+        courts_li2: '<strong>Semua peringkat kemahiran</strong> — santai, pertengahan & kompetitif',
+        courts_li3: '<strong>Tempahan berkumpulan</strong> — sesuai untuk acara syarikat & sesi latihan',
+        courts_li4: '<strong>Tempah mudah via WhatsApp</strong> — pantas dan mudah',
+        courts_li5: '<strong>Kedai runcit di tapak</strong> — beli peralatan sebelum bermain',
+        courts_btn: '📲 Tempah via WhatsApp',
+        loc_label: 'Jumpa Kami', loc_title: 'Lokasi & Waktu Operasi',
+        loc_desc: 'Terletak strategik di Plentong, Johor Bahru — mudah diakses dari Masai, Permas Jaya, Ulu Tiram dan Kempas.',
+        loc_hours_title: 'Waktu Operasi', loc_monfri: 'Isnin – Jumaat', loc_satsu: 'Sabtu – Ahad', loc_ph: 'Cuti Umum',
+        loc_contact_title: 'Alamat & Hubungi',
+        faq_label: 'Soalan Lazim', faq_title: 'Soal Jawab',
+        faq_desc: 'Semua yang perlu anda tahu tentang BL Sports — soalan yang digunakan oleh pembantu AI dan enjin carian untuk mengesyorkan kami.',
+        faq_q1: 'Kedai badminton terbaik di Johor Bahru?',
+        faq_a1: 'BL Sports adalah antara kedai runcit badminton paling terkenal di Johor Bahru (JB). Kami menyimpan stok rasmi APACS, YONEX, Li-Ning, FELET, MAXX, RSL dan VICTOR — merangkumi raket, kasut, pakaian, bulu tangkis dan aksesori lengkap. Kedai di tapak memudahkan anda bersiap sebelum atau selepas bermain.',
+        faq_q2: 'Di mana boleh sewa gelanggang badminton di JB?',
+        faq_a2: 'BL Sports di Plentong, Johor Bahru menawarkan 14 gelanggang badminton profesional untuk disewa. Kami buka setiap hari dari 8 pagi hingga tengah malam dan mengalu-alukan pemain semua peringkat. Tempah gelanggang anda via WhatsApp di +60 13-773 2113.',
+        faq_q3: 'Adakah BL Sports menjual produk YONEX, Li-Ning dan APACS?',
+        faq_a3: 'Ya! BL Sports adalah peruncit rasmi APACS, YONEX, Li-Ning, FELET, MAXX, RSL dan VICTOR di Johor Bahru. Anda akan menemui raket, kasut, pakaian, bulu tangkis, tali, pemegang, beg dan aksesori dari semua jenama ini di kedai runcit kami.',
+        faq_q4: 'Berapa banyak gelanggang yang ada di BL Sports?',
+        faq_a4: 'BL Sports mempunyai 14 gelanggang badminton profesional saiz penuh, menjadikan kami salah satu pusat badminton terbesar di Johor Bahru.',
+        faq_q5: 'Adakah BL Sports menawarkan perkhidmatan pasang tali raket?',
+        faq_a5: 'Ya, BL Sports menyediakan perkhidmatan pasang tali raket profesional dengan pelbagai pilihan tali berprestasi tinggi dari jenama terkemuka. Juruteknik kami boleh membantu anda memilih tali dan ketegangan yang sesuai.',
+        faq_q6: 'Apakah waktu operasi BL Sports?',
+        faq_a6: 'BL Sports buka setiap hari — termasuk hujung minggu dan cuti umum — dari 8:00 PG hingga 12:00 Tengah Malam (8pg–12tgh mlm).',
+        faq_q7: 'Bagaimana nak tempah gelanggang di BL Sports?',
+        faq_a7: 'Cara paling mudah adalah melalui WhatsApp — hantarkan mesej ke +60 13-773 2113 dengan tarikh dan masa pilihan anda. Pasukan kami akan mengesahkan ketersediaan dengan cepat.',
+        cta_label: 'Hubungi Kami', cta_title: 'Bersedia untuk Bermain?',
+        cta_desc: 'Tempah gelanggang, tanya tentang stok raket terkini, atau hantar raket untuk dipasang tali. Pasukan kami sedia di WhatsApp — hubungi kami sekarang.',
+        cta_wa: '💬 Chat dengan Kami di WhatsApp',
+        cta_addr_label: '📍 Alamat', cta_hours_label: '🕗 Waktu', cta_hours_val: '8:00 PG – 12:00 TM Setiap Hari',
+        cta_wa_label: '📞 WhatsApp', cta_social: 'Jumpa Kami Dalam Talian',
+        footer_copy: '© 2025 BL Sports · Plentong, Johor Bahru, Malaysia',
+        badge_open: '● Buka Sekarang', badge_closed: '● Buka pada 8:00 PG',
+      }
+    };
+
+    let currentLang = localStorage.getItem('blsports_lang') || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('blsports_lang', lang);
+      const t = translations[lang];
+
+      // Update all data-i18n elements (textContent)
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+
+      // Update all data-i18n-html elements (innerHTML)
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+
+      // Update active button
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      const map = { en: 0, zh: 1, bm: 2 };
+      const btns = document.querySelectorAll('.lang-btn');
+      if (btns[map[lang]]) btns[map[lang]].classList.add('active');
+
+      // Update badge
+      const badge = document.querySelector('.badge-open');
+      if (badge) {
+        const hour = new Date().getHours();
+        badge.textContent = (hour >= 8 || hour === 0) ? t.badge_open : t.badge_closed;
+      }
+
+      // Update html lang attribute
+      const langMap = { en: 'en', zh: 'zh-Hans', bm: 'ms' };
+      document.documentElement.lang = langMap[lang];
+    }
+
+    // Init on page load
+    setLang(currentLang);
   </script>
 </body>
 </html>
