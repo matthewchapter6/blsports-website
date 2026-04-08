@@ -51,9 +51,9 @@ APACS, YONEX, Li-Ning, FELET, MAXX, RSL, VICTOR
 ## Languages
 
 The website at https://blsportsjb.com is available in 3 languages:
-- English (EN)
-- Simplified Chinese (中文)
-- Bahasa Malaysia (BM)
+- English (EN): https://blsportsjb.com/#en
+- Simplified Chinese (中文): https://blsportsjb.com/#zh
+- Bahasa Malaysia (BM): https://blsportsjb.com/#bm
 
 Users can switch languages using the toggle in the navigation bar. The site serves a multilingual customer base including Malaysian Chinese, Malay locals, and Singapore visitors.
 
