@@ -259,7 +259,16 @@
       color: var(--white);
       text-decoration: none;
     }
-    .nav-logo img { height: 40px; width: auto; vertical-align: middle; }
+    .nav-logo img { height: 80px; width: auto; vertical-align: middle; }
+    .nav-logo .nav-logo-name {
+      display: inline-block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.9rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      vertical-align: middle;
+      margin-left: 0.5rem;
+    }
     .nav-logo span { color: var(--accent); }
 
     .nav-links {
@@ -993,8 +1002,8 @@
   <!-- ══ NAVIGATION ══ -->
   <nav>
     <a href="#hero" class="nav-logo">
-      <img src="images/logo_blsports_bw.png" alt="BL Sports" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
-      <span style="display:none;">BL<span style="color:var(--accent)">.</span>SPORTS</span>
+      <img src="images/logo_blsports_bw.png" alt="BL Sports" />
+      <span class="nav-logo-name">BL <span style="color:var(--accent)">SPORTS</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
