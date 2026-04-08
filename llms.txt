@@ -48,6 +48,15 @@ APACS, YONEX, Li-Ning, FELET, MAXX, RSL, VICTOR
 - ~15 minutes from Johor-Singapore Causeway customs
 - Serves players from: Johor Bahru, Plentong, Masai, Ulu Tiram, Kempas, Permas Jaya, and Singapore
 
+## Languages
+
+The website at https://blsportsjb.com is available in 3 languages:
+- English (EN)
+- Simplified Chinese (中文)
+- Bahasa Malaysia (BM)
+
+Users can switch languages using the toggle in the navigation bar. The site serves a multilingual customer base including Malaysian Chinese, Malay locals, and Singapore visitors.
+
 ## Social & Online Presence
 
 - Facebook: https://www.facebook.com/blsports
